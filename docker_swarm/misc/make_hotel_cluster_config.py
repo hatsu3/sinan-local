@@ -38,13 +38,16 @@ replica_cpus = args.replica_cpus
 # cpu_percent = args.cpu_percent
 
 IP_ADDR = {}
-IP_ADDR["ath-1"]     = "128.253.128.64"
-IP_ADDR["ath-2"]     = "128.253.128.65"
-IP_ADDR["ath-3"]     = "128.253.128.66"
-IP_ADDR["ath-4"]     = "128.253.128.67"
-IP_ADDR["ath-5"]     = "128.253.128.68"
-IP_ADDR["ath-8"]     = "ath-8-ip"
-IP_ADDR["ath-9"]     = "ath-9-ip"
+# IP_ADDR["ath-1"]     = "128.253.128.64"
+# IP_ADDR["ath-2"]     = "128.253.128.65"
+# IP_ADDR["ath-3"]     = "128.253.128.66"
+# IP_ADDR["ath-4"]     = "128.253.128.67"
+# IP_ADDR["ath-5"]     = "128.253.128.68"
+# IP_ADDR["ath-8"]     = "ath-8-ip"
+# IP_ADDR["ath-9"]     = "ath-9-ip"
+IP_ADDR["ath-8"]     = "10.236.186.221"  # danyang-01, GPU 2
+IP_ADDR["ath-9"]     = "10.236.186.223"  # danyang-02, GPU 0
+IP_ADDR["ath-1"]     = "10.236.186.225"  # danyang-03, GPU 1
 
 service_config = {
     "frontend":          {'max_replica': 1, 'max_cpus': 48},
@@ -85,11 +88,20 @@ for node in nodes:
     assert node in IP_ADDR
     node_config[node] = {}
     node_config[node]['ip_addr'] = IP_ADDR[node]
+    # if node == 'ath-8':
+    #     node_config[node]['cpus'] = 88
+    #     node_config[node]['label'] = 'type=compute'
+    # elif node == 'ath-9':
+    #     node_config[node]['cpus'] = 88
+    #     node_config[node]['label'] = 'type=data'
+    # else:
+    #     node_config[node]['cpus'] = 40
+    #     node_config[node]['label'] = 'type=data'
     if node == 'ath-8':
-        node_config[node]['cpus'] = 88
+        node_config[node]['cpus'] = 40
         node_config[node]['label'] = 'type=compute'
     elif node == 'ath-9':
-        node_config[node]['cpus'] = 88
+        node_config[node]['cpus'] = 40
         node_config[node]['label'] = 'type=data'
     else:
         node_config[node]['cpus'] = 40

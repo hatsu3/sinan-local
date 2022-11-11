@@ -1306,19 +1306,19 @@ def main():
 		users = TestUsers[i]
 		if Deploy:
 			ath_9_cmd = 'docker-compose -f ' + str( BenchmarkDir / 'docker-compose-ath9.yml') + ' down'
-			p = ssh(Username, 'ath-9', ath_9_cmd, quiet=False)
+			p = ssh(Username, '10.236.186.223', ath_9_cmd, quiet=False)
 			p.wait()
 
 			ath_8_cmd = 'docker-compose -f ' + str( BenchmarkDir / 'docker-compose-ath8.yml') + ' down'
-			p = ssh(Username, 'ath-8', ath_8_cmd, quiet=False)
+			p = ssh(Username, '10.236.186.221', ath_8_cmd, quiet=False)
 			p.wait()
 
 			ath_9_cmd = 'docker-compose -f ' + str( BenchmarkDir / 'docker-compose-ath9.yml') + ' up -d'
-			p = ssh(Username, 'ath-9', ath_9_cmd, quiet=False)
+			p = ssh(Username, '10.236.186.223', ath_9_cmd, quiet=False)
 			p.wait()
 
 			ath_8_cmd = 'docker-compose -f ' + str( BenchmarkDir / 'docker-compose-ath8.yml') + ' up -d'
-			p = ssh(Username, 'ath-8', ath_8_cmd, quiet=False)
+			p = ssh(Username, '10.236.186.221', ath_8_cmd, quiet=False)
 			p.wait()
 
 			time.sleep(10)
