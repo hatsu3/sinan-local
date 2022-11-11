@@ -1,11 +1,11 @@
 {
     "nodes": {
-        "ath-8": {
+        "danyang-01": {
             "cpus": 40,
             "ip_addr": "10.236.186.221",
             "label": "type=compute"
         },
-        "ath-9": {
+        "danyang-02": {
             "cpus": 40,
             "ip_addr": "10.236.186.223",
             "label": "type=data"

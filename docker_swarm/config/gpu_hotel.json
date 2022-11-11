@@ -3,7 +3,7 @@
         0,
         1
     ],
-    "host": "10.236.186.221",
+    "host": "danyang-01",
     "ip_addr": "10.236.186.221",
     "script": "hotel_reserve_predictor.py",
     "working_dir": "/home/yicheng/cs671_sinan/sinan-local/ml_docker_swarm"

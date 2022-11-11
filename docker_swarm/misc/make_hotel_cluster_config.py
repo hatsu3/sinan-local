@@ -45,9 +45,9 @@ IP_ADDR = {}
 # IP_ADDR["ath-5"]     = "128.253.128.68"
 # IP_ADDR["ath-8"]     = "ath-8-ip"
 # IP_ADDR["ath-9"]     = "ath-9-ip"
-IP_ADDR["ath-8"]     = "10.236.186.221"  # danyang-01, GPU 2
-IP_ADDR["ath-9"]     = "10.236.186.223"  # danyang-02, GPU 0
-IP_ADDR["ath-1"]     = "10.236.186.225"  # danyang-03, GPU 1
+IP_ADDR["danyang-01"]     = "10.236.186.221"  # GPU 2
+IP_ADDR["danyang-02"]     = "10.236.186.223"  # GPU 0
+IP_ADDR["danyang-03"]     = "10.236.186.225"  # GPU 1
 
 service_config = {
     "frontend":          {'max_replica': 1, 'max_cpus': 48},
@@ -97,10 +97,10 @@ for node in nodes:
     # else:
     #     node_config[node]['cpus'] = 40
     #     node_config[node]['label'] = 'type=data'
-    if node == 'ath-8':
+    if node == 'danyang-01':
         node_config[node]['cpus'] = 40
         node_config[node]['label'] = 'type=compute'
-    elif node == 'ath-9':
+    elif node == 'danyang-02':
         node_config[node]['cpus'] = 40
         node_config[node]['label'] = 'type=data'
     else:
